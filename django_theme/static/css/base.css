@@ -1,0 +1,29 @@
+body {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h3 {
+    color: darkmagenta;
+}
+
+h5 {
+    color: darkgreen;
+}
+
+h5 {
+    color: darkgreen;
+}
+
+.custom1 {
+    background-color: lightgreen;
+    font-style: italic;
+}
+
+.custom2 {
+    background-color: lightcyan;
+    font-weight: bold;
+}

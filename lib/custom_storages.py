@@ -12,15 +12,15 @@ class StaticStorage(S3Boto3Storage):
     def url(self, name, domain=None, parameters=None, expire=None):
         result = None
         if domain:
-            pieces = domain.split('.')
+            domain_no_port = domain.split(':')[0]
+            pieces = domain_no_port.split('.')
             subdomain = pieces[0]
             if subdomain.isalpha():
-                subdomain_name = os.path.join(subdomain, name)
-                result = super().url(subdomain_name, parameters, expire)
-                print('first result: ' + result)
+                name_with_domain = os.path.join(subdomain, name)
+                if self.exists(name_with_domain):
+                    result = super().url(name_with_domain, parameters, expire)
 
         if not result:
             result = super().url(name, parameters, expire)
-            print('second result: ' + result)
 
         return result

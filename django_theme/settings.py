@@ -142,4 +142,3 @@ STATICFILES_STORAGE = 'lib.custom_storages.StaticStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals(), staticfiles=False)
-

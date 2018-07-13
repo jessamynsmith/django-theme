@@ -15,10 +15,9 @@ class StaticStorage(S3Boto3Storage):
             domain_no_port = domain.split(':')[0]
             pieces = domain_no_port.split('.')
             subdomain = pieces[0]
-            if subdomain.isalpha():
-                name_with_domain = os.path.join(subdomain, name)
-                if self.exists(name_with_domain):
-                    result = super().url(name_with_domain, parameters, expire)
+            name_with_domain = os.path.join(subdomain, name)
+            if self.exists(name_with_domain):
+                result = super().url(name_with_domain, parameters, expire)
 
         if not result:
             result = super().url(name, parameters, expire)

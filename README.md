@@ -50,14 +50,14 @@ This project is already set up for deployment to Heroku.
 
 1. Make as many new Heroku apps as you want subdomains, ensuring you have the following addons:
 
-    Heroku Postgres
+        Heroku Postgres
 
 1. Set up Amazon S3 for static and media as defined in this [Caktus blog post](https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/)
 
 1. Add Heroku config variables for AWS:
 
-    heroku config:set AWS_ACCESS_KEY_ID=<value_from_amazon>
-    heroku config:set AWS_SECRET_ACCESS_KEY=<value_from_amazon>
+        heroku config:set AWS_ACCESS_KEY_ID=<value_from_amazon>
+        heroku config:set AWS_SECRET_ACCESS_KEY=<value_from_amazon>
 
 1. In your S3 bucket, create a directory inside the static directory for each subdomain you want to serve. Inside that directory, mirror the path of any file you want to override. Note that this will fully override the default file, so you'll want to make sure that the file you upload for each customer is a clean replacement of a base file you create.
 
